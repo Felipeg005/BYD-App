@@ -5,6 +5,6 @@ class User < ApplicationRecord
   has_many :payments, foreign_key: 'author_id'
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
   validates :name, presence: true, length: { maximum: 100 }
 end
