@@ -4,6 +4,19 @@
   <a href class="login-header">Logout</a>
 </header>
 <main class="categories-container">
-
-
+<% @categories.each do |category| %>
+  <% if current_user == category.author_id %>
+    <ul class="category-container">
+      <li class="category-icon"><%= category.icon %></li>
+      <div class="category-title-container">
+        <li class="category-name"><%= category.name %></li>
+        <li class="category-date"><%= category.created_at %></li>
+      </div>
+      <li class="category-total"><%= Category.joins(:payments).where('payments.category_id' => category.id).sum(:amount) %></li>
+    </ul>
+  <% end %>
+<% end %>
 </main>
+<footer class="category-footer">
+  <a href="<%= categories_new_path %>"><%= image_tag "plus.png", class:"plus-img" %></a>
+</footer>

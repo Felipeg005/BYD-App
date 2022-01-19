@@ -1,0 +1,31 @@
+<header class="header-container">
+  <%= image_tag "hamburger.png", class:"back-img" %>
+  <p class="header-title">CATEGORIES</p>
+  <a href class="login-header">Logout</a>
+</header>
+<% flash.each do |type, msg| %>
+<div>
+  <%= msg %>
+</div>
+<% end %>
+<div class="table-container">
+  <%= form_with model: @category, url: create_new_category_path, method: :post, local: true do |f| %>
+    <div class="new-category-form">
+      <%= f.hidden_field :author_id, value: current_user.id %><br>
+      <main class="inputs-container">
+        <%= f.text_field :name, class: 'email-field', placeholder: 'Category Name' %><br>
+      </main>
+      <p class="icons-title">Please select your icon</p>
+      <div class="icons-container">
+      <% @icons.each_with_index do |icon, index| %>
+        <div class="icon-container">
+          <%= f.label :icon, image_tag(icon, class: 'icon') , value: index, class: 'icon-label' %>
+          <%= f.radio_button :icon, value: index %>
+        </div>
+      <% end %>
+    </div>
+    <div class="create-button-container">
+      <%= f.submit class: 'create-button' %>
+    </div>
+  <% end %>
+</div>
