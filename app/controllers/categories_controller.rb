@@ -10,26 +10,32 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    if Recipe.new(recipes_params).invalid?
-      flash[:notice] = 'The Recipe was not saved for incorrect data'
-      redirect_to '/recipes/new/'
+    if Category.new(category_params).invalid?
+      flash[:notice] = 'The category was not saved for incorrect data'
+      redirect_to '/categories/new/'
     else
-      @recipe = Recipe.create!(recipes_params)
+      @category = Category.create!(category_params)
       respond_to do |format|
         format.html do
-          if @recipe.save
+          if @category.save
             # success message
-            flash[:success] = 'Recipe saved successfully'
+            flash[:success] = 'category saved successfully'
             # redirect to index
-            redirect_to '/recipes/'
+            redirect_to '/categories/'
           else
             # error message
-            flash.now[:error] = 'Error: Recipe could not be saved'
+            flash.now[:error] = 'Error: category could not be saved'
             # render new
-            render :new, locals: { recipe: @recipe }
+            render :new, locals: { category: @category }
           end
         end
       end
     end
+  end
+  
+  private
+
+  def category_params
+    params.require(:category).permit(:name, :author_id, :icon)
   end
 end
