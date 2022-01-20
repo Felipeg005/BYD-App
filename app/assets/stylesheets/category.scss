@@ -30,8 +30,25 @@
 }
 
 .category-container {
+  padding: 20px;
+  display: flex;
   width: 80%;
   background-color: white;
+}
+
+.category-date {
+  font-size: 12px;
+  margin: 10px 0 0 0;
+}
+
+.category-title-container {
+  margin-left: 10px;
+  color: gray;
+}
+
+.category-total {
+  font-weight: bolder;
+  margin: 0 0 0 auto;
 }
 
 // New
