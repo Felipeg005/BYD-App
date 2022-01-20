@@ -1,0 +1,26 @@
+<header class="header-container">
+  <a href="<%= categories_path %>"><%= image_tag "go-back.png", class:"back-img" %></a>
+  <p class="header-title">PAYMENTS</p>
+  <a href="<%= destroy_user_session_path %>" class="login-header">Logout</a>
+</header>
+<main class="categories-container">
+<div class="total-spent">
+  <p>Total spent in <%= @category.name %> Category $<%= Category.joins(:payments).where('payments.category_id' => @category.id).sum(:amount) %></p>
+</div>
+<% @payments.each do |payment| %>
+  <% if current_user.id == @category.author_id %>
+    <ul class="category-container">
+      <li><%= image_tag 'delete.png', class: 'delete-img' %><%= button_to '', delete_payment_path, params: { id: payment.id }, class: 'delete-category-btn', method: :post %></li>
+      <li><%= image_tag category.icon, class: 'icon' %></li>
+      <div class="category-title-container">
+        <li class="category-name"><%= category.name %></li>
+        <li class="category-date"><%= category.created_at.to_s.first(10) %></li>
+      </div>
+      <li class="category-total">$<%= Category.joins(:payments).where('payments.category_id' => category.id).sum(:amount) %></li>
+    </ul>
+  <% end %>
+<% end %>
+</main>
+<footer class="category-footer">
+  <a href="<%= payments_new_path %>"><%= image_tag "plus.png", class:"plus-img" %></a>
+</footer>
