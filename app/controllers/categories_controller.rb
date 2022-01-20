@@ -1,14 +1,12 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
-    @icons = ['icon-bill.png', 'icon-hospital.png', 'icon-hotel.png', 'icon-house.png', 'icon-mobile.png', 'icon-party.png',
-      'icon-restaurant.png', 'icon-taxi.png', 'icon-vacation.png', 'icon-money.png']
   end
 
   def new
     @category = Category.new
-    @icons = ['icon-bill.png', 'icon-hospital.png', 'icon-hotel.png', 'icon-house.png', 'icon-mobile.png', 'icon-party.png',
-    'icon-restaurant.png', 'icon-taxi.png', 'icon-vacation.png', 'icon-money.png']
+    @icons = ['icon-bill.png', 'icon-hospital.png', 'icon-hotel.png', 'icon-house.png', 'icon-mobile.png',
+              'icon-party.png', 'icon-restaurant.png', 'icon-taxi.png', 'icon-vacation.png', 'icon-money.png']
   end
 
   def show
@@ -48,7 +46,7 @@ class CategoriesController < ApplicationController
     end
     redirect_back(fallback_location: categories_path)
   end
-  
+
   private
 
   def category_params
