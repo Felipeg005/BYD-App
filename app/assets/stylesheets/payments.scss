@@ -1,3 +1,18 @@
 // Place all the styles related to the Payments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.total-spent {
+  width: 100%;
+  background-color: white;
+  height: 40px;
+  margin: -20px 0 20px 0;
+}
+
+.total-payments {
+  color: gray;
+  text-align: center;
+}
+
+.bolder {
+  font-weight: bolder;
+}

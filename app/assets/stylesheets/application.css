@@ -27,3 +27,8 @@ a {
 li {
   list-style: none;
 }
+
+.app-message {
+  text-align: center;
+  color: gray;
+}
