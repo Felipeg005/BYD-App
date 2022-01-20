@@ -1,6 +1,8 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
+    @icons = ['icon-bill.png', 'icon-hospital.png', 'icon-hotel.png', 'icon-house.png', 'icon-mobile.png', 'icon-party.png',
+      'icon-restaurant.png', 'icon-taxi.png', 'icon-vacation.png', 'icon-money.png']
   end
 
   def new

@@ -5,9 +5,9 @@
 </header>
 <main class="categories-container">
 <% @categories.each do |category| %>
-  <% if current_user == category.author_id %>
+  <% if current_user.id == category.author_id %>
     <ul class="category-container">
-      <li class="category-icon"><%= category.icon %></li>
+      <li><%= image_tag category.icon, class: 'icon' %></li>
       <div class="category-title-container">
         <li class="category-name"><%= category.name %></li>
         <li class="category-date"><%= category.created_at %></li>

@@ -19,8 +19,8 @@
       <div class="icons-container">
       <% @icons.each_with_index do |icon, index| %>
         <div class="icon-container">
-          <%= f.label :icon, image_tag(icon, class: 'icon') , value: index, class: 'icon-label' %>
-          <%= f.radio_button :icon, value: index %>
+          <%= f.label :icon, image_tag(icon, class: 'icon'), class: 'icon-label' %>
+          <%= f.radio_button :icon, icon %>
         </div>
       <% end %>
     </div>
