@@ -11,12 +11,11 @@
   <% if current_user.id == @category.author_id %>
     <ul class="category-container">
       <li><%= image_tag 'delete.png', class: 'delete-img' %><%= button_to '', delete_payment_path, params: { id: payment.id }, class: 'delete-category-btn', method: :post %></li>
-      <li><%= image_tag category.icon, class: 'icon' %></li>
       <div class="category-title-container">
-        <li class="category-name"><%= category.name %></li>
-        <li class="category-date"><%= category.created_at.to_s.first(10) %></li>
+        <li class="category-name"><%= payment.name %></li>
+        <li class="category-date"><%= payment.created_at.to_s.first(10) %></li>
       </div>
-      <li class="category-total">$<%= Category.joins(:payments).where('payments.category_id' => category.id).sum(:amount) %></li>
+      <li class="category-total">$<%= payment.amount %></li>
     </ul>
   <% end %>
 <% end %>
