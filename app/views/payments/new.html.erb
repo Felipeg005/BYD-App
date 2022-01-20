@@ -4,7 +4,7 @@
   <a href="<%= destroy_user_session_path %>" class="login-header">Logout</a>
 </header>
 <% flash.each do |type, msg| %>
-<div>
+<div class="app-message">
   <%= msg %>
 </div>
 <% end %>

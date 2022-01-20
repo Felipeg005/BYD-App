@@ -3,6 +3,11 @@
   <p class="header-title">CATEGORIES</p>
   <a href="<%= destroy_user_session_path %>" class="login-header">Logout</a>
 </header>
+<% flash.each do |type, msg| %>
+<div class="app-message">
+  <%= msg %>
+</div>
+<% end %>
 <main class="categories-container">
 <% @categories.each do |category| %>
   <% if current_user.id == category.author_id %>
@@ -22,4 +27,5 @@
 </main>
 <footer class="category-footer">
   <a href="<%= categories_new_path %>"><%= image_tag "plus.png", class:"plus-img" %></a>
+  <p class="add-new-text">Add category</p>
 </footer>

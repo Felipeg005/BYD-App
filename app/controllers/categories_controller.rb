@@ -39,6 +39,8 @@ class CategoriesController < ApplicationController
 
   def delete
     @category = Category.find(params[:id])
+    @payment = Payment.where(category_id: params[:id])
+    @payment.each(&:destroy)
     if @category.destroy
       flash[:success] = 'Category destroyed successfully'
     else

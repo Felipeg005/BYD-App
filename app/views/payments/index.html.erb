@@ -7,8 +7,13 @@
 <div class="total-spent">
   <p class="total-payments">Total spent in <%= @category.name %> Category <span class="bolder">$<%= Category.joins(:payments).where('payments.category_id' => @category.id).sum(:amount) %></span></p>
 </div>
+<% flash.each do |type, msg| %>
+<div class="app-message">
+  <%= msg %>
+</div>
+<% end %>
 <% @payments.each do |payment| %>
-  <% if current_user.id == @category.author_id %>
+  <% if (current_user.id == @category.author_id) && (payment.category_id == @category.id) %>
     <ul class="category-container">
       <li><%= image_tag 'delete.png', class: 'delete-img' %><%= button_to '', delete_payment_path, params: { id: payment.id }, class: 'delete-category-btn', method: :post %></li>
       <div class="category-title-container">
@@ -22,4 +27,5 @@
 </main>
 <footer class="category-footer">
   <a href="/payments/<%= @category.id %>/new"><%= image_tag "plus.png", class:"plus-img" %></a>
+  <p class="add-new-text">Add payment</p>
 </footer>
