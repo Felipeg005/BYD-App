@@ -11,6 +11,10 @@ class CategoriesController < ApplicationController
     'icon-restaurant.png', 'icon-taxi.png', 'icon-vacation.png', 'icon-money.png']
   end
 
+  def show
+    @category = Category.find(params[:category_id])
+  end
+
   def create
     if Category.new(category_params).invalid?
       flash[:notice] = 'The category was not saved for incorrect data'
@@ -33,6 +37,16 @@ class CategoriesController < ApplicationController
         end
       end
     end
+  end
+
+  def delete
+    @category = Category.find(params[:id])
+    if @category.destroy
+      flash[:success] = 'Category destroyed successfully'
+    else
+      flash[:error] = 'Error: Category could not be destroyed'
+    end
+    redirect_back(fallback_location: categories_path)
   end
   
   private

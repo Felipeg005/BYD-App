@@ -1,7 +1,7 @@
 <header class="header-container">
   <a href="<%= categories_path %>"><%= image_tag "go-back.png", class:"back-img" %></a>
   <p class="header-title">NEW CATEGORY</p>
-  <a href class="login-header">Logout</a>
+  <a href="<%= destroy_user_session_path %>" class="login-header">Logout</a>
 </header>
 <% flash.each do |type, msg| %>
 <div>

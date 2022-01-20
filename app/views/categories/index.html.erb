@@ -1,20 +1,21 @@
 <header class="header-container">
   <%= image_tag "hamburger.png", class:"back-img" %>
   <p class="header-title">CATEGORIES</p>
-  <a href class="login-header">Logout</a>
+  <a href="<%= destroy_user_session_path %>" class="login-header">Logout</a>
 </header>
 <main class="categories-container">
 <% @categories.each do |category| %>
   <% if current_user.id == category.author_id %>
-    <a href="">
-    <ul class="category-container">
-      <li><%= image_tag category.icon, class: 'icon' %></li>
-      <div class="category-title-container">
-        <li class="category-name"><%= category.name %></li>
-        <li class="category-date"><%= category.created_at.to_s.first(10) %></li>
-      </div>
-      <li class="category-total">$<%= Category.joins(:payments).where('payments.category_id' => category.id).sum(:amount) %></li>
-    </ul>
+    <a href="payments/<%= category.id %>">
+      <ul class="category-container">
+        <li><%= image_tag 'delete.png', class: 'delete-img' %><%= button_to '', delete_category_path, params: { id: category.id }, class: 'delete-category-btn', method: :post %></li>
+        <li><%= image_tag category.icon, class: 'icon' %></li>
+        <div class="category-title-container">
+          <li class="category-name"><%= category.name %></li>
+          <li class="category-date"><%= category.created_at.to_s.first(10) %></li>
+        </div>
+        <li class="category-total">$<%= Category.joins(:payments).where('payments.category_id' => category.id).sum(:amount) %></li>
+      </ul>
     </a>
   <% end %>
 <% end %>

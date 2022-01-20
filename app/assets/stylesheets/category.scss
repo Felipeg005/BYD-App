@@ -30,9 +30,9 @@
 }
 
 .category-container {
-  padding: 20px;
+  padding: 15px;
   display: flex;
-  width: 80%;
+  width: 80vw;
   background-color: white;
 }
 
@@ -49,6 +49,20 @@
 .category-total {
   font-weight: bolder;
   margin: 0 0 0 auto;
+}
+
+.delete-img {
+  margin: 0 10px 0 0;
+  width: 18px;
+  height: 18px;
+}
+
+.delete-category-btn {
+  border: none;
+  background: none;
+  margin-top: -20px;
+  width: 18px;
+  height: 40px;
 }
 
 // New
