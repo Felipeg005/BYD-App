@@ -1,3 +1,112 @@
 // Place all the styles related to the Category controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+// Index
+.category-footer {
+  width: 100%;
+  height: 35px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3979c3;
+}
+
+.plus-img {
+  margin-top: -25px;
+  background-color: #3979c3;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.categories-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-container {
+  padding: 15px;
+  display: flex;
+  width: 80vw;
+  background-color: white;
+}
+
+.category-date {
+  font-size: 12px;
+  margin: 10px 0 0 0;
+}
+
+.category-title-container {
+  margin-left: 10px;
+  color: gray;
+}
+
+.category-total {
+  font-weight: bolder;
+  margin: 0 0 0 auto;
+}
+
+.delete-img {
+  margin: 0 10px 0 0;
+  width: 18px;
+  height: 18px;
+}
+
+.delete-category-btn {
+  border: none;
+  background: none;
+  margin-top: -20px;
+  width: 18px;
+  height: 40px;
+}
+
+// New
+
+.icons-title {
+  text-align: center;
+  font-size: 22px;
+  font-family: 'Gruppo', cursive;
+}
+
+.icons-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  background-color: #3979c313;
+  padding: 10px 20px;
+  border-radius: 50%;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.create-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.create-button {
+  width: 90%;
+  background-color: #3979c3;
+  text-align: center;
+  color: white;
+  padding: 20px 0;
+  border-radius: 3px;
+  border: none;
+}
