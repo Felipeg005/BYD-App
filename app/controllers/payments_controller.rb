@@ -1,11 +1,12 @@
 class PaymentsController < ApplicationController
   def index
     @category = Category.find(params[:category_id])
-    @payments = Payment.all
+    @payments = Payment.all.order(created_at: :desc)
   end
 
   def new
     @payment = Payment.new
+    @category = Category.find(params[:category_id])
   end
 
   def create
@@ -45,6 +46,6 @@ class PaymentsController < ApplicationController
   private
 
   def payment_params
-    params.require(:payment).permit(:name, :author_id, :icon)
+    params.require(:payment).permit(:name, :author_id, :category_id, :amount)
   end
 end

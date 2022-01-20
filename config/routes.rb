@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   post 'categories/create', to: 'categories#create', as: 'create_new_category'
   post 'categories/delete', to: 'categories#delete', as: 'delete_category'
+  post 'payments/:category_id/create', to: 'payments#create', as: 'create_new_payment'
+  post 'payments/:category_id/delete', to: 'payments#delete', as: 'delete_payment'
 end
