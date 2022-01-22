@@ -12,7 +12,7 @@ class PaymentsController < ApplicationController
   def create
     if Payment.new(payment_params).invalid?
       flash[:notice] = 'The payment was not saved for incorrect data'
-      redirect_to '/categories/new/'
+      redirect_to "/payments/#{params[:category_id]}/new"
     else
       @payment = Payment.create!(payment_params)
       respond_to do |format|
@@ -36,9 +36,9 @@ class PaymentsController < ApplicationController
   def delete
     @payment = Payment.find(params[:id])
     if @payment.destroy
-      flash[:success] = 'payment destroyed successfully'
+      flash[:success] = 'payment deleted successfully'
     else
-      flash[:error] = 'Error: payment could not be destroyed'
+      flash[:error] = 'Error: payment could not be deleted'
     end
     redirect_back(fallback_location: payments_path)
   end

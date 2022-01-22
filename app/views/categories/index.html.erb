@@ -11,17 +11,21 @@
 <main class="categories-container">
 <% @categories.each do |category| %>
   <% if current_user.id == category.author_id %>
-    <a href="/payments/<%= category.id %>">
       <ul class="category-container">
         <li><%= image_tag 'delete.png', class: 'delete-img' %><%= button_to '', delete_category_path, params: { id: category.id }, class: 'delete-category-btn', method: :post %></li>
-        <li><%= image_tag category.icon, class: 'icon' %></li>
+        <a href="/payments/<%= category.id %>">
+          <li><%= image_tag category.icon, class: 'icon' %></li>
+        </a>
+        <a href="/payments/<%= category.id %>">
         <div class="category-title-container">
           <li class="category-name"><%= category.name %></li>
           <li class="category-date"><%= category.created_at.to_s.first(10) %></li>
         </div>
-        <li class="category-total">$<%= Category.joins(:payments).where('payments.category_id' => category.id).sum(:amount) %></li>
+        </a>
+        <a class="category-total" href="/payments/<%= category.id %>">
+          <li>$<%= Category.joins(:payments).where('payments.category_id' => category.id).sum(:amount) %></li>
+        </a>
       </ul>
-    </a>
   <% end %>
 <% end %>
 </main>

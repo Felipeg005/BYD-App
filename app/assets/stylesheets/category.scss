@@ -35,16 +35,19 @@
   display: flex;
   width: 80vw;
   background-color: white;
+  z-index: 0;
 }
 
 .category-date {
   font-size: 12px;
   margin: 10px 0 0 0;
+  z-index: 0;
 }
 
 .category-title-container {
   margin-left: 10px;
   color: gray;
+  z-index: 0;
 }
 
 .category-total {
@@ -56,6 +59,7 @@
   margin: 0 10px 0 0;
   width: 18px;
   height: 18px;
+  z-index: 0;
 }
 
 .delete-category-btn {
@@ -64,6 +68,7 @@
   margin-top: -20px;
   width: 18px;
   height: 40px;
+  z-index: 1;
 }
 
 .add-new-text {
