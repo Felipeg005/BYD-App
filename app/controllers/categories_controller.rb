@@ -42,9 +42,9 @@ class CategoriesController < ApplicationController
     @payment = Payment.where(category_id: params[:id])
     @payment.each(&:destroy)
     if @category.destroy
-      flash[:success] = 'Category destroyed successfully'
+      flash[:success] = 'Category deleted successfully'
     else
-      flash[:error] = 'Error: Category could not be destroyed'
+      flash[:error] = 'Error: Category could not be deleted'
     end
     redirect_back(fallback_location: categories_path)
   end

@@ -36,9 +36,9 @@ class PaymentsController < ApplicationController
   def delete
     @payment = Payment.find(params[:id])
     if @payment.destroy
-      flash[:success] = 'payment destroyed successfully'
+      flash[:success] = 'payment deleted successfully'
     else
-      flash[:error] = 'Error: payment could not be destroyed'
+      flash[:error] = 'Error: payment could not be deleted'
     end
     redirect_back(fallback_location: payments_path)
   end
