@@ -4,7 +4,7 @@ Mobile web application where you can manage your budget: you have a list of tran
 
 ## Video Presentation
 
-[Please visit this link to see the video]()
+[Please visit this link to see the video](https://drive.google.com/file/d/1KDRo-wzE4bTuFENxQb_kSp26KugL30ex/view?usp=sharing)
 
 ## Live Version
 
