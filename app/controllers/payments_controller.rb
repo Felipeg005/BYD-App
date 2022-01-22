@@ -12,7 +12,7 @@ class PaymentsController < ApplicationController
   def create
     if Payment.new(payment_params).invalid?
       flash[:notice] = 'The payment was not saved for incorrect data'
-      redirect_to '/categories/new/'
+      redirect_to "/payments/#{params[:category_id]}/new"
     else
       @payment = Payment.create!(payment_params)
       respond_to do |format|
