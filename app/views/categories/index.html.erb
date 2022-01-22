@@ -13,7 +13,7 @@
   <% if current_user.id == category.author_id %>
     <a href="/payments/<%= category.id %>">
       <ul class="category-container">
-        <%= image_tag 'delete.png', class: 'delete-img' %><%= button_to '', delete_category_path, params: { id: category.id }, class: 'delete-category-btn', method: :post %>
+        <li><%= image_tag 'delete.png', class: 'delete-img' %><%= button_to '', delete_category_path, params: { id: category.id }, class: 'delete-category-btn', method: :post %></li>
         <li><%= image_tag category.icon, class: 'icon' %></li>
         <div class="category-title-container">
           <li class="category-name"><%= category.name %></li>
