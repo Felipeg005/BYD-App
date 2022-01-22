@@ -1,8 +1,3 @@
-<% flash.each do |type, msg| %>
-<div class="app-message">
-  <%= msg %>
-</div>
-<% end %>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <header class="header-container">
     <a href="<%= home_path %>" class="go-back"><%= image_tag "go-back.png", class:"back-img" %></a>
@@ -11,6 +6,11 @@
       <%= f.submit "Next", class: 'login-header' %>
     </div>
   </header>
+  <% flash.each do |type, msg| %>
+    <div class="app-message">
+    <%= msg %>
+    </div>
+  <% end %>
   <main class="inputs-container">
     <div class="field">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'email-field', placeholder: 'Email' %>
