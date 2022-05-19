@@ -1,0 +1,26 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <header class="header-container">
+    <a href="<%= home_path %>" class="go-back"><%= image_tag "go-back.png", class:"back-img" %></a>
+    <p class="header-title">LOGIN</p>
+    <div class="actions">
+      <%= f.submit "Next", class: 'login-header' %>
+    </div>
+  </header>
+  <% flash.each do |type, msg| %>
+    <div class="app-message">
+    <%= msg %>
+    </div>
+  <% end %>
+  <main class="inputs-container">
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'email-field', placeholder: 'Email' %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "current-password", class: 'password-field', placeholder: 'Password' %>
+    </div>
+  </main>
+<% end %>
+<div class="forgot-password">
+  <%= render "devise/shared/links" %>
+</div>

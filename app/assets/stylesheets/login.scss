@@ -1,0 +1,68 @@
+.header-container {
+  padding: 6px 0;
+  width: 100%;
+  background-color: #3979c3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  box-shadow: 0 5px 10px rgb(206, 206, 206);
+  margin-bottom: 20px;
+}
+
+.header-title {
+  width: 70%;
+  text-align: center;
+  align-self: center;
+  margin: 0 0 0 10px;
+}
+
+.back-img {
+  padding: 10px;
+  width: 25px;
+  height: 25px;
+}
+
+.login-header {
+  background-color: transparent;
+  border: none;
+  margin: 0 10px 0 0;
+  padding: 0;
+  color: white;
+  font-size: 14px;
+}
+
+.inputs-container {
+  margin: 10px 0 0 0;
+  background-color: white;
+  border: 1px solid rgb(228, 228, 228);
+  border-right: none;
+  border-left: none;
+}
+
+.email-field,
+.password-field {
+  width: 95%;
+  border: none;
+  margin: 0 0 0 10px;
+  outline: none;
+  padding: 15px 0;
+  color: rgb(173, 173, 173);
+}
+
+.password-field::placeholder,
+.email-field::placeholder {
+  color: rgb(173, 173, 173);
+}
+
+.password-field {
+  border-top: 1px solid rgb(228, 228, 228);
+}
+
+.forgot-password {
+  text-align: center;
+  color: gray;
+  font-size: 14px;
+  margin-top: 15px;
+}

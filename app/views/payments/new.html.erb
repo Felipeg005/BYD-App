@@ -1,0 +1,25 @@
+<header class="header-payments-container">
+  <a href="<%= payments_path %>"><%= image_tag "go-back.png", class:"back-img" %></a>
+  <p class="header-title">NEW PAYMENT</p>
+  <a href="<%= destroy_user_session_path %>" class="login-header">Logout</a>
+</header>
+<% flash.each do |type, msg| %>
+<div class="app-message">
+  <%= msg %>
+</div>
+<% end %>
+<div class="table-container">
+  <%= form_with model: @payment, url: create_new_payment_path, method: :post, local: true do |f| %>
+    <div class="new-category-form">
+      <%= f.hidden_field :author_id, value: current_user.id %><br>
+      <%= f.hidden_field :category_id, value: @category.id %><br>
+      <main class="inputs-container">
+        <%= f.text_field :name, class: 'email-field', placeholder: 'Payment Name' %><br>
+        <%= f.number_field :amount, class: 'password-field', placeholder: 'Amount' %><br>
+      </main>
+    </div>
+    <div class="create-button-container">
+      <%= f.submit class: 'create-button' %>
+    </div>
+  <% end %>
+</div>
