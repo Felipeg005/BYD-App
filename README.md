@@ -2,10 +2,6 @@
 
 Mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
-## Video Presentation
-
-[Please visit this link to see the video](https://drive.google.com/file/d/1KDRo-wzE4bTuFENxQb_kSp26KugL30ex/view?usp=sharing)
-
 ## Live Version
 
 [Please visit the live version](https://thawing-escarpment-03695.herokuapp.com/)
