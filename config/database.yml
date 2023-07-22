@@ -84,4 +84,4 @@ production:
   url: <%= ENV['DATABASE_URL'] %>
   database: byd_development_965t
   username: byd_development_user
-  password: <%= ENV['DB9q1rfA3pWhv4VSxT2gT3XtJmlDmBP7'] %>
+  password: <%= ENV['DATABASE_RENDER_PASSWORD'] %>
