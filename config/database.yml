@@ -82,6 +82,6 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: byd_development
+  database: byd_development_965t
   username: byd_development_user
-  password: <%= ENV['3c2ANsROVtw1M751Cur5lwQR9Wkx17Mc'] %>
+  password: <%= ENV['DB9q1rfA3pWhv4VSxT2gT3XtJmlDmBP7'] %>
