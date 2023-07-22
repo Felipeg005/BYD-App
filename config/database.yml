@@ -24,6 +24,8 @@ default: &default
 development:
   <<: *default
   database: byd_development
+  username: byd_development_user
+  password: 3c2ANsROVtw1M751Cur5lwQR9Wkx17Mc
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
