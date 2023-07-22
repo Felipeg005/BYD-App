@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+.welcome-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  margin: 45% 0 0 0;
+  font-family: 'Fredoka One', Helvetica, cursive;
+  color: gray;
+  font-size: 45px;
+}
+
+.slogan {
+  margin: 0;
+  font-family: 'Gruppo', cursive;
+  color: gray;
+  font-size: 20px;
+}
+
+.user-buttons-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-button,
+.signup-button {
+  width: 90%;
+  background-color: #3979c3;
+  text-align: center;
+  color: white;
+  padding: 20px 0;
+  border-radius: 3px;
+}
+
+.signup-button {
+  background-color: transparent;
+  color: gray;
+}

@@ -1,0 +1,35 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <header class="header-container">
+    <a href="<%= home_path %>" class="go-back"><%= image_tag "go-back.png", class:"back-img" %></a>
+    <p class="header-title">REGISTER</p>
+    <div class="actions">
+      <%= f.submit "Next", class: 'login-header' %>
+    </div>
+  </header>
+
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <main class="inputs-container">
+
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, autocomplete: "text", class: 'email-field', placeholder: 'Full Name' %>
+    </div>
+
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'password-field', placeholder: 'Email' %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "new-password", class: 'password-field', placeholder: "Password (#{@minimum_password_length} characters minimum)" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'password-field', placeholder: 'Confirm Password' %>
+    </div>
+  </main>
+<% end %>
+
+
+<div class="forgot-password">
+  <%= render "devise/shared/links" %>
+</div>

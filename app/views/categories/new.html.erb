@@ -1,0 +1,31 @@
+<header class="header-container">
+  <a href="<%= categories_path %>"><%= image_tag "go-back.png", class:"back-img" %></a>
+  <p class="header-title">NEW CATEGORY</p>
+  <a href="<%= destroy_user_session_path %>" class="login-header">Logout</a>
+</header>
+<% flash.each do |type, msg| %>
+<div class="app-message">
+  <%= msg %>
+</div>
+<% end %>
+<div class="table-container">
+  <%= form_with model: @category, url: create_new_category_path, method: :post, local: true do |f| %>
+    <div class="new-category-form">
+      <%= f.hidden_field :author_id, value: current_user.id %><br>
+      <main class="inputs-container">
+        <%= f.text_field :name, class: 'email-field', placeholder: 'Category Name' %><br>
+      </main>
+      <p class="icons-title">Please select your icon</p>
+      <div class="icons-container">
+      <% @icons.each_with_index do |icon, index| %>
+        <div class="icon-container">
+          <%= f.label :icon, image_tag(icon, class: 'icon'), class: 'icon-label' %>
+          <%= f.radio_button :icon, icon %>
+        </div>
+      <% end %>
+    </div>
+    <div class="create-button-container">
+      <%= f.submit class: 'create-button' %>
+    </div>
+  <% end %>
+</div>
