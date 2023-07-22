@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: byd_production
-  username: byd
+  url: <%= ENV['postgres://byd_development_user:3c2ANsROVtw1M751Cur5lwQR9Wkx17Mc@dpg-ciu1d6tgkuvoigeneto0-a/byd_development'] %>
+  database: byd_development
+  username: byd_development_user
   password: <%= ENV['BYD_DATABASE_PASSWORD'] %>
